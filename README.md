@@ -1,8 +1,8 @@
 <h2 align="center">🛒🖱Projeto Teste Shopper🖥️🛒 </h2>
 
 <h4 align="justify">
-Elaboração de site (frontend) com formulário simples de cadastro de usuário para poder realizar os pedidos. 
-O sistema foi escrito Javascript (node.js e/ou react.js).
+Elaboração de site (frontend) com formulário de cadastro de usuário para poder realizar os pedidos. 
+O sistema foi escrito em Javascript (node.js e/ou react.js).
 Foi recebido um arquivo products.csv, que é uma lista com produtos disponíveis e seus respectivos preços e estoque, porém sem fotos.
 <h4/>
 
