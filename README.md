@@ -16,7 +16,7 @@ Foi recebido um arquivo products.csv, que é uma lista com produtos disponíveis
 
 ## ✔O que funciona
 
-  - Na pagina home é possivel ver a lista de produtos, sua quantidade disponível em estoque vindos da API de backend.
+  - Na pagina home é possivel ver a lista de produtos, sua quantidade disponível em estoque e preço unitário. Dados vindos da API de backend.
   - Os produtos podem ser adicionados no carrinho do cliente caso ele já tenha realizado o cadastro com nome e data de entrega.
   - Alerta de erro caso tente realizar compras sem cadastro.
   - No carrinho é possível adicionar unidades de cada produto.
