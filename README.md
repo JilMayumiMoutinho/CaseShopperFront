@@ -10,7 +10,7 @@ Foi recebido um arquivo products.csv, que é uma lista com produtos disponíveis
 
 <h3 align="center">
 
-[🔗Surge](#link-surge) | [💻Projeto](#💻como-rodar-o-projeto-localmente) | [📚Bibliotecas](#bibliotecas-utilizadas) | [🛠️Tecnologias](#tecnologias-utilizadas) | [👩🏻‍💻Desenvolvedora](#👩🏻‍💻desenvolvedora) 
+[🔗Surge](#link-surge) | [💻Projeto](#💻como-rodar-o-projeto-localmente) | [📚Bibliotecas](#bibliotecas-utilizadas) | [🛠️Tecnologias](#tecnologias-utilizadas) | [👩🏻‍💻Desenvolvedora](#desenvolvedora) 
 
 </h3>
 
