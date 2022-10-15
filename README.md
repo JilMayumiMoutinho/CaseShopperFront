@@ -23,7 +23,7 @@ Foi recebido um arquivo products.csv, que é uma lista com produtos disponíveis
   - No carrinho é possível retirar unidades de cada produto ou retirar todas as unidades da lista de compras.
   - O usúario recebe um alert caso tente adicionar mais itens do que há disponível em estoque.
   - Paginação de produtos.
-  - Botão para retornar ao início da tela.
+  - Botão para retornar ao topo da tela.
   - Após realizada a compra, o usuário é direcionado para página de confirmação com botão para retornar a home, onde o total do carrinho retorna a zero.
   - Página de erro caso navegue por uma página não existente(/*)
   - Loading na página de produtos
@@ -31,13 +31,13 @@ Foi recebido um arquivo products.csv, que é uma lista com produtos disponíveis
 
 ## 🔗Link Surge
 
-- http://pokebattle-pokedex.surge.sh
+- http://case-shopper.surge.sh
 
 ## 💻Como Rodar o Projeto Localmente
 
 Siga o passo-a-passo abaixo:
 
-| Passo                   | Comando       |
+| Tarefa                  | Comando       |
 | ----------------------- | ------------- |
 | Faça o Clone            | `git clone`   |
 | Instale as Dependências | `npm install` |
