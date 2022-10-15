@@ -24,7 +24,7 @@ Foi recebido um arquivo products.csv, que é uma lista com produtos disponíveis
   - O usúario recebe um alert caso tente adicionar mais itens do que há disponível em estoque.
   - Paginação de produtos.
   - Botão para retornar ao início da tela.
-  - Após realizada a compra, direcionado para pagina de confirmação com botão para retornar a home, onde o total do carrinho retorna a zero.
+  - Após realizada a compra, o usuário é direcionado para página de confirmação com botão para retornar a home, onde o total do carrinho retorna a zero.
   - Página de erro caso navegue por uma página não existente(/*)
   - Loading na página de produtos
   - Responsividade para mobile.
