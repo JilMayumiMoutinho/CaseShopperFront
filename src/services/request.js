@@ -85,7 +85,7 @@ export const SumUnits = (body, setBalance, cart) => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Algo deu errado. Tente novamente mais tarde",
+        text: "Fique de olho na quantidade em estoque! Algo deu errado. Tente novamente mais tarde",
         footer: `Código do erro ${err.response.status}`,
       });
     });

@@ -13,10 +13,7 @@ export const ProductsContainer = styled.div`
   display: flex;
   width: 100%;
   height: fit-content;
-  margin: auto;
-  .PaginationDesk {
-    margin: 0 auto;
-  }
+  margin: 0 auto;
   @media screen and (max-width: 480px) {
     display: none;
   }
@@ -30,9 +27,6 @@ export const ProductsContainerMobile = styled.div`
     width: 100%;
     height: fit-content;
     margin: auto;
-    .PaginationMobile {
-      margin: auto;
-    }
   }
 `;
 

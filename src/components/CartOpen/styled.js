@@ -20,7 +20,7 @@ export const Container2 = styled.header`
     display: flex;
     width: 95%;
     height: fit-content;
-    margin: auto;
+    margin: 0 auto 5% auto;
   }
 `;
 
@@ -71,6 +71,7 @@ export const DivInfoWithIcon = styled.div`
     text-align: left;
   }
 `;
+
 export const ImgPay = styled.img`
   width: 1.875rem;
   height: 2.5rem;

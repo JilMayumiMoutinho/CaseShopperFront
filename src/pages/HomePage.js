@@ -47,6 +47,7 @@ export function HomePage() {
         </ProductsContainerMobile>
       )}
       <Pagination
+        className="PaginationMobile"
         count={3}
         onChange={onChangePage}
         page={page}
