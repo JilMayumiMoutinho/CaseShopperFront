@@ -21,7 +21,7 @@ export const LogoDiv = styled.div`
   border-radius: 0.75rem;
   margin: 0.3125rem;
   img {
-    width: 12.5rem;
+    width: 10rem;
     border-radius: 0.75rem;
     margin: 0 auto;
     margin-bottom: 1rem;
@@ -55,6 +55,28 @@ export const BalanceDiv = styled.div`
   color: white;
 `;
 
+export const InputsDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 43.75rem;
+  @media screen and (max-width: 480px) {
+    margin-top: -2%;
+    width: 95%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`;
+
+export const SearchDiv = styled.div`
+  width: 100%;
+  height: 2.625rem;
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
 export const SearchInput = styled.input`
   display: flex;
   margin: 0 auto;
@@ -76,30 +98,30 @@ export const ButtonMobile = styled(Button)`
   margin-left: 32rem;
   margin-top: -2.6rem;
   @media screen and (max-width: 480px) {
-    margin-left: 15.3rem;
-  }
-`;
-
-export const SearchDiv = styled.div`
-  width: 100%;
-  height: 2.625rem;
-  @media screen and (max-width: 480px) {
-    flex-direction: column;
-    align-items: center;
+    margin-left: 68%;
   }
 `;
 
 export const FormContainer = styled.form`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45rem;
+  align-items: end;
+  width: 43.75rem;
   height: 2.625rem;
-  gap: 1%;
+  gap: 7%;
   @media screen and (max-width: 480px) {
     width: 100%;
     height: 10rem;
+    margin-top: -4%;
+    justify-content: center;
     flex-wrap: wrap;
+  }
+`;
+
+export const DivForLabel = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 480px) {
+    width: 100%;
   }
 `;
 
@@ -111,38 +133,32 @@ export const InputStyled = styled.input`
   border: none;
 `;
 
-export const LabelStyled = styled.label`
-  position: relative;
-  width: 65%;
-  top: -0.75rem;
-  left: 8.7rem;
+export const LabelStyled = styled.p`
+  margin-bottom: -1.1rem;
+  margin-left: 0.7rem;
   padding: 0.25rem;
   font-size: 0.625rem;
   letter-spacing: -0.0181rem;
   color: #666666;
+  z-index: 1;
   @media screen and (max-width: 480px) {
     top: 1rem;
-  left: -3rem;
+    left: -3rem;
   }
 `;
 
-export const InputsDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 43.75rem;
+export const DivForLabelDate = styled(DivForLabel)`
+  width: 13.5rem;
   @media screen and (max-width: 480px) {
-    width: 95%;
-    flex-wrap: wrap;
-    justify-content: center;
-   }
+    width: 100%;
+  }
 `;
 
 export const ButtonUser = styled(Button)`
-  width: 22rem;
+  width: 6rem;
   @media screen and (max-width: 480px) {
     width: 10rem;
-    margin-top: 0.2rem;
+    margin-top: 1% auto;
   }
 `;
 

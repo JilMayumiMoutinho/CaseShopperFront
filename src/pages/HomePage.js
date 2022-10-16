@@ -31,39 +31,32 @@ export function HomePage() {
   return (
     <HomeContainer>
       <Header />
-      <ProductsContainer>
-        {isLoading && (
-          <LoadingGif src={Loading} alt="Loading. Página carregando" />
-        )}
-
-        {!isLoading && <Card />}
-
-        {isOpen && <CartOpen />}
-
-      </ProductsContainer>
-
-
-      <ProductsContainerMobile>
-        {!isOpen && (
-          <>
-            <Card />
-
-          
-          </>
-        )}
-        {isOpen && <CartOpen />}
-      </ProductsContainerMobile>
-      <Pagination 
-          count={3}
-          onChange={onChangePage}
-          page={page}
-          variant="outlined"
-          shape="rounded"
-          size="large"
-        />
-          <ButtonGoToTop
-            onClick={() => setUpPage(window.scroll(0, 0))}
-          >Voltar ao topo</ButtonGoToTop>
+      {isLoading && (
+        <LoadingGif src={Loading} alt="Loading. Página carregando" />
+      )}
+      {!isLoading && (
+        <ProductsContainer>
+          <Card />
+          {isOpen && <CartOpen />}
+        </ProductsContainer>
+      )}
+      {!isLoading && (
+        <ProductsContainerMobile>
+          {!isOpen && <Card />}
+          {isOpen && <CartOpen />}
+        </ProductsContainerMobile>
+      )}
+      <Pagination
+        count={3}
+        onChange={onChangePage}
+        page={page}
+        variant="outlined"
+        shape="rounded"
+        size="large"
+      />
+      <ButtonGoToTop onClick={() => setUpPage(window.scroll(0, 0))}>
+        Voltar ao topo
+      </ButtonGoToTop>
       <Footer />
     </HomeContainer>
   );

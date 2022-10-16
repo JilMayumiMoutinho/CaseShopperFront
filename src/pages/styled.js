@@ -6,7 +6,7 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
 `;
 
 export const ProductsContainer = styled.div`
@@ -21,6 +21,7 @@ export const ProductsContainer = styled.div`
     display: none;
   }
 `;
+
 export const ProductsContainerMobile = styled.div`
   display: none;
   @media screen and (max-width: 480px) {
@@ -71,7 +72,7 @@ export const DivImageDelivery = styled.div`
 
 export const LoadingGif = styled.img`
   width: 12.5rem;
-  margin: auto;
+  margin: 4% auto;
 `;
 
 export const ButtonGoToTop = styled.button`
@@ -86,10 +87,12 @@ export const ButtonGoToTop = styled.button`
   border: none;
   background-color: ${greenShopper};
   color: white;
-  :hover{
+  :hover {
     cursor: pointer;
   }
   @media screen and (max-width: 480px) {
-    margin: -1.7rem 0 0 18rem;
+    margin: -1.7rem 0 0 78%;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 `;

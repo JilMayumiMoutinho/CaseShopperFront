@@ -13,7 +13,7 @@ export const GetAllProducts = (page, query, setAllProducts) => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Algo deu errado. Tente novamente mais tarde. Problemas com servidor.",
+        text: `Algo deu errado. Tente novamente mais tarde. Problemas com servidor.`,
         footer: `Código do erro ${err?.response?.status}`,
       });
     });
@@ -68,7 +68,8 @@ export const CreatePurchase = (body, setBalance, cart) => {
         color: `${blueShopper}`,
         text: `Você precisa informar seu nome e data de entrega antes de adicionar itens no carrinho. 
 
-        E se você já adicionou o item no carrinho, você pode aumentar a quantidade de itens por la, ok? `,
+        E se você já adicionou o item no carrinho, você pode aumentar a quantidade de itens por la, ok?
+        ${err?.response.data.message}  `,
         footer: `Código do erro ${err.response.status}. ${err.response.data.message}`,
       });
     });
