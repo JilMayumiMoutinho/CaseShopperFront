@@ -103,7 +103,7 @@ export const SubUnits = (body, setBalance, cart) => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Algo deu errado. Tente novamente mais tarde",
+        text: "Acho que você nao comprou tanto assim... Algo deu errado. Tente novamente mais tarde.",
         footer: `Código do erro ${err.response.status}`,
       });
     });
@@ -158,6 +158,5 @@ export const DelPurchase = (
         text: "Algo deu errado. Tente novamente mais tarde",
         footer: `Código do erro ${err.response.status}`,
       });
-      console.log(err);
     });
 };
