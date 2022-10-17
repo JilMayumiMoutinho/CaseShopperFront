@@ -12,6 +12,8 @@ export const GlobalState = (props) => {
   const [balance, setBalance] = useState(0);
   const [wasClicked, setWasClicked] = useState(false);
   const [upPage, setUpPage] = useState(0);
+  const [sort, setSort] = useState("");
+  const [order, setOrder] = useState("ASC");
 
   if (cart === "") {
     const getLocal = localStorage.getItem("cart");
@@ -41,6 +43,10 @@ export const GlobalState = (props) => {
     setWasClicked,
     upPage,
     setUpPage,
+    sort,
+    setSort,
+    order,
+    setOrder,
   };
 
   return <Provider value={values}>{props.children}</Provider>;

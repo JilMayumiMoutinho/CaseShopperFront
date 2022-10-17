@@ -3,9 +3,11 @@ import { BASE_URL } from "../constants/url";
 import Swal from "sweetalert2";
 import { blueShopper, greenShopper } from "../constants/colors";
 
-export const GetAllProducts = (page, query, setAllProducts) => {
+export const GetAllProducts = (page, query, order, sort, setAllProducts) => {
   axios
-    .get(`${BASE_URL}/product/all/${page}/?search=${query}`)
+    .get(
+      `${BASE_URL}/product/all/${page}/?search=${query}&order=${order}&sort=${sort}`
+    )
     .then((res) => {
       setAllProducts(res.data);
     })
@@ -132,14 +134,23 @@ export const CalculateBalance = (setBalance, cart) => {
     .then((res) => {
       setBalance(res.data.totalBalance.toFixed(2));
     })
-    .catch((err) => {
-    });
+    .catch((err) => {});
 };
 
-export const DelPurchase = (id_purchase, setBalance, cart) => {
+export const DelPurchase = (
+  id_purchase,
+  id_product,
+  quantity,
+  setBalance,
+  cart
+) => {
   axios
-    .delete(`${BASE_URL}/product/delPurchase/${id_purchase}`)
-    .then((res) => {      CalculateBalance(setBalance, cart);})
+    .delete(
+      `${BASE_URL}/product/delPurchase/${id_purchase}/?id_product=${id_product}&quantity=${quantity}`
+    )
+    .then((res) => {
+      CalculateBalance(setBalance, cart);
+    })
     .catch((err) => {
       Swal.fire({
         icon: "error",
@@ -147,5 +158,6 @@ export const DelPurchase = (id_purchase, setBalance, cart) => {
         text: "Algo deu errado. Tente novamente mais tarde",
         footer: `Código do erro ${err.response.status}`,
       });
+      console.log(err);
     });
 };

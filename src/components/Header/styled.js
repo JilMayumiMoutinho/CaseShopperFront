@@ -69,11 +69,13 @@ export const InputsDiv = styled.div`
 `;
 
 export const SearchDiv = styled.div`
+  display: flex;
   width: 100%;
   height: 2.625rem;
   @media screen and (max-width: 480px) {
     flex-direction: column;
     align-items: center;
+    height: 6rem;
   }
 `;
 
@@ -90,15 +92,17 @@ export const SearchInput = styled.input`
     width: 100%;
     flex-wrap: wrap;
     flex-direction: column;
+    margin: 0 auto 4%;
   }
 `;
 
 export const ButtonMobile = styled(Button)`
-  position: absolute;
-  margin-left: 32rem;
-  margin-top: -2.6rem;
+  margin-top: -0.03rem;
+  margin-left: -5rem;
+  z-index: 1;
   @media screen and (max-width: 480px) {
-    margin-left: 68%;
+    margin-left: 75%;
+    margin-top: -3.4rem;
   }
 `;
 
@@ -169,6 +173,34 @@ export const BalanceP = styled.p`
 
 export const CartImgIcon = styled.div`
   display: none;
+  @media screen and (max-width: 480px) {
+    margin-top: 1px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 42.5%;
+  }
+`;
+
+export const FilterSelect = styled.select`
+  width: 20%;
+  height: 2.625rem;
+  border-radius: 2.5rem;
+  padding-left: 0.7rem;
+  background-color: white;
+  border: none;
+  @media screen and (max-width: 480px) {
+    margin-top: 4%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    left: 42.5%;
+  }
+`;
+
+export const MenuItem = styled.option`
+  color: ${blueShopper};
   @media screen and (max-width: 480px) {
     margin-top: 1px;
     width: 100%;

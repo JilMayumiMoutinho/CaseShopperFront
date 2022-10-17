@@ -1,20 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import ProductImg from "../../assets/productImg.jpeg";
 import { GlobalContext } from "../../global/GlobalContext";
-import {
-  CreatePurchase,
-  GetAllProducts,
-} from "../../services/request";
+import { CreatePurchase, GetAllProducts } from "../../services/request";
 import { Container, ItemCard, Button, Pgreen, DivPrice } from "./styled";
 
 export const Card = () => {
-  const { cart, setBalance, page, query } = useContext(GlobalContext);
+  const { cart, setBalance, page, query, order, setOrder, sort, balance } =
+    useContext(GlobalContext);
 
   const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
-    GetAllProducts(page, query, setAllProducts);
-  }, [page, query, cart]);
+    GetAllProducts(page, query, order, sort, setAllProducts);
+    setOrder(order);
+  }, [page, query, order, sort, cart, balance]);
 
   const onClickAdd = (item) => {
     const body = {

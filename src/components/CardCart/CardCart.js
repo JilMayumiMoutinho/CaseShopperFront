@@ -8,7 +8,7 @@ import {
   GetAllPurchase,
   DelPurchase,
   SumUnits,
-  SubUnits
+  SubUnits,
 } from "../../services/request";
 import {
   Container,
@@ -25,7 +25,7 @@ export const CardCart = () => {
   const [allPurchase, setAllPurchase] = useState([]);
 
   useEffect(() => {
-    GetAllPurchase(cart, setAllPurchase);
+      GetAllPurchase(cart, setAllPurchase);
   }, [cart, balance]);
 
   const onClickSum = (item) => {
@@ -44,8 +44,14 @@ export const CardCart = () => {
     SubUnits(body, setBalance, cart);
   };
 
-  const onClickDel = (id_purchase) => {
-    DelPurchase(id_purchase, setBalance, cart);
+  const onClickDel = (item) => {
+    DelPurchase(
+      item?.id_purchase,
+      item?.id_product,
+      item?.quantity,
+      setBalance,
+      cart
+    );
   };
 
   const productsCart = allPurchase?.map((item) => {
@@ -54,7 +60,7 @@ export const CardCart = () => {
         <img src={ProductImg} alt="Foto" />
         <div>
           <p>{item.name}</p>
-          <br/>
+          <br />
           <DivPrice>
             <Pgreen>R$ {item.price}</Pgreen>
             <DivUnits>
@@ -75,7 +81,7 @@ export const CardCart = () => {
         <GarbageImg
           src={Garbage}
           alt="Garbage"
-          onClick={() => onClickDel(item?.id_purchase)}
+          onClick={() => onClickDel(item)}
         />
       </ItemCard>
     );
