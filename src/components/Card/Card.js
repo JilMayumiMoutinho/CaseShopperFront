@@ -1,17 +1,41 @@
 import React, { useContext, useEffect, useState } from "react";
 import ProductImg from "../../assets/productImg.jpeg";
+import Swal from "sweetalert2";
 import { GlobalContext } from "../../global/GlobalContext";
-import { CreatePurchase, GetAllProducts } from "../../services/request";
-import { Container, ItemCard, Button, Pgreen, DivPrice } from "./styled";
+import {
+  CreatePurchase,
+  GetAllProducts,
+  GetAllPurchase,
+} from "../../services/request";
+import {
+  Container,
+  ItemCard,
+  Button,
+  ButtonDisabled,
+  Pgreen,
+  DivPrice,
+} from "./styled";
+import { blueShopper } from "../../constants/colors";
 
 export const Card = () => {
-  const { cart, setBalance, page, query, order, setOrder, sort, balance } =
-    useContext(GlobalContext);
+  const {
+    cart,
+    setBalance,
+    page,
+    query,
+    order,
+    setOrder,
+    sort,
+    balance,
+    allProducts,
+    setAllProducts,
+  } = useContext(GlobalContext);
 
-  const [allProducts, setAllProducts] = useState([]);
+  const [allPurchase, setAllPurchase] = useState([]);
 
   useEffect(() => {
     GetAllProducts(page, query, order, sort, setAllProducts);
+    GetAllPurchase(cart, setAllPurchase);
     setOrder(order);
   }, [page, query, order, sort, cart, balance]);
 
@@ -20,12 +44,24 @@ export const Card = () => {
       id_cart: cart,
       id_product: item.id,
       price: item.price,
-      name: item.name,
     };
     CreatePurchase(body, setBalance, cart);
   };
 
+  const onClickAlert = () => {
+    Swal.fire({
+      icon: "warning",
+      title: "Quer mais itens?",
+      color: `${blueShopper}`,
+      text: "Este produto já foi adicionado ao seu carrinho! Aumente a quantidade por lá, ok?",
+    });
+  };
+
   const productsCard = allProducts?.map((item) => {
+    const exist = allPurchase.some(
+      (purchase) => item.id == purchase.id_product
+    );
+
     return (
       <ItemCard key={item.id}>
         <p>{item.name}</p>
@@ -35,7 +71,13 @@ export const Card = () => {
           <p>R$ </p>
           <Pgreen>{item.price}</Pgreen>
         </DivPrice>
-        <Button onClick={() => onClickAdd(item)}>+Adicionar</Button>
+        {exist ? (
+          <ButtonDisabled onClick={() => onClickAlert()}>
+            Adicionado
+          </ButtonDisabled>
+        ) : (
+          <Button onClick={() => onClickAdd(item)}>+Adicionar</Button>
+        )}
       </ItemCard>
     );
   });

@@ -29,12 +29,13 @@ export const ItemCard = styled.div`
   font-size: small;
   img {
     height: 4rem;
+    border-radius: 1rem;
   }
   :hover {
     border: 0.0625rem solid #666666;
     box-shadow: 0.625rem 0.625rem #ccc6c6;
     img {
-      height: 3.2rem;
+      height: 4.5rem;
     }
   }
   @media screen and (max-width: 480px) {
@@ -60,10 +61,21 @@ export const Button = styled.button`
   letter-spacing: 0.0187rem;
   margin-top: 1rem;
   :hover {
-    border: 0.0625rem solid ${greenShopper};
     background-color: ${greenShopper};
     color: white;
   }
+`;
+
+export const ButtonDisabled = styled.button`
+  width: 5.625rem;
+  height: 1.9375rem;
+  color: white;
+  background-color: ${greenShopper};
+  border: solid 0.0625rem ${greenShopper};
+  border-radius: 0.5rem 0 0.5rem 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.0187rem;
+  margin-top: 1rem;
 `;
 
 export const DivPrice = styled.div`

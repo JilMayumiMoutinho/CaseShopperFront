@@ -72,6 +72,7 @@ export const SearchDiv = styled.div`
   display: flex;
   width: 100%;
   height: 2.625rem;
+  justify-content: space-between;
   @media screen and (max-width: 480px) {
     flex-direction: column;
     align-items: center;
@@ -81,7 +82,6 @@ export const SearchDiv = styled.div`
 
 export const SearchInput = styled.input`
   display: flex;
-  margin: 0 auto;
   width: 65%;
   height: 2.625rem;
   padding: 0.625rem;
@@ -97,12 +97,12 @@ export const SearchInput = styled.input`
 `;
 
 export const ButtonMobile = styled(Button)`
-  margin-top: -0.03rem;
+  margin-top: -0.029rem;
   margin-left: -5rem;
   z-index: 1;
   @media screen and (max-width: 480px) {
     margin-left: 75%;
-    margin-top: -3.4rem;
+    margin-top: -3.408rem;
   }
 `;
 
@@ -111,7 +111,7 @@ export const FormContainer = styled.form`
   align-items: end;
   width: 43.75rem;
   height: 2.625rem;
-  gap: 7%;
+  gap: 13%;
   @media screen and (max-width: 480px) {
     width: 100%;
     height: 10rem;

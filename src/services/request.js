@@ -15,7 +15,7 @@ export const GetAllProducts = (page, query, order, sort, setAllProducts) => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: `Algo deu errado. Tente novamente mais tarde. Problemas com servidor.`,
+        text: `Problemas com servidor. Tente novamente mais tarde.`,
         footer: `Código do erro ${err?.response?.status}`,
       });
     });
@@ -68,11 +68,9 @@ export const CreatePurchase = (body, setBalance, cart) => {
         icon: "error",
         title: "Oops...",
         color: `${blueShopper}`,
-        text: `Você precisa informar seu nome e data de entrega antes de adicionar itens no carrinho. 
-
-        E se você já adicionou o item no carrinho, você pode aumentar a quantidade de itens por la, ok?
-        ${err?.response.data.message}  `,
-        footer: `Código do erro ${err.response.status}. ${err.response.data.message}`,
+        text: "Você precisa informar seu nome e data de entrega antes de adicionar itens no carrinho.",
+        footer: `Código do erro ${err.response.status}. ${err.response.data.message}. 
+        ${err?.response.data.message}`,
       });
     });
 };
@@ -87,7 +85,7 @@ export const SumUnits = (body, setBalance, cart) => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Fique de olho na quantidade em estoque! Algo deu errado. Tente novamente mais tarde",
+        text: "Quantidade em estoque finalizada! Que tal procurar um produto similar?",
         footer: `Código do erro ${err.response.status}`,
       });
     });
@@ -101,9 +99,8 @@ export const SubUnits = (body, setBalance, cart) => {
     })
     .catch((err) => {
       Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Acho que você nao comprou tanto assim... Algo deu errado. Tente novamente mais tarde.",
+        icon: "warning",
+        text: "Acho que você nao comprou tanto assim... Se quiser pode adicionar unidades novamente ou deletar o produto de seu carrinho.",
         footer: `Código do erro ${err.response.status}`,
       });
     });
@@ -116,12 +113,6 @@ export const GetAllPurchase = (cart, setAllPurchase) => {
       setAllPurchase(res.data);
     })
     .catch((err) => {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Parece que você ainda não criou seu cadastro ou não adicionou itens no carrinho.",
-        footer: `Código do erro ${err.response}`,
-      });
     });
 };
 
@@ -152,11 +143,5 @@ export const DelPurchase = (
       CalculateBalance(setBalance, cart);
     })
     .catch((err) => {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Algo deu errado. Tente novamente mais tarde",
-        footer: `Código do erro ${err.response.status}`,
-      });
     });
 };

@@ -21,11 +21,17 @@ import {
 } from "./styled";
 
 export const CardCart = () => {
-  const { cart, setBalance, balance } = useContext(GlobalContext);
+  const {
+    cart,
+    setBalance,
+    balance,
+    allProducts,
+  } = useContext(GlobalContext);
+
   const [allPurchase, setAllPurchase] = useState([]);
 
   useEffect(() => {
-      GetAllPurchase(cart, setAllPurchase);
+    GetAllPurchase(cart, setAllPurchase);
   }, [cart, balance]);
 
   const onClickSum = (item) => {
@@ -55,11 +61,14 @@ export const CardCart = () => {
   };
 
   const productsCart = allPurchase?.map((item) => {
+    const names = allProducts?.find((product) => {
+      return product?.id === item?.id_product;
+    })?.name;
     return (
       <ItemCard key={item.id_purchase}>
         <img src={ProductImg} alt="Foto" />
         <div>
-          <p>{item.name}</p>
+          <p>{names}</p>
           <br />
           <DivPrice>
             <Pgreen>R$ {item.price}</Pgreen>

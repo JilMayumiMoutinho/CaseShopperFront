@@ -15,8 +15,15 @@ import {
 import { Pagination } from "@mui/material";
 
 export function HomePage() {
-  const { page, setPage, isOpen, isLoading, setUpPage } =
-    useContext(GlobalContext);
+  const {
+    page,
+    setPage,
+    isOpen,
+    isLoading,
+    setIsLoading,
+    setUpPage,
+    allProducts,
+  } = useContext(GlobalContext);
 
   const onChangePage = (event, value) => {
     setPage(value);

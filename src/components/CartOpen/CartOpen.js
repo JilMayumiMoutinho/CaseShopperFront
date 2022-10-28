@@ -13,11 +13,12 @@ import {
   DivInfoWithIcon,
   ContainerCheck,
   Method,
-  ImgPay
+  ImgPay,
+  Pgreen,
 } from "./styled";
 
 export const CartOpen = () => {
-  const { setCart, setBalance } = useContext(GlobalContext);
+  const { setCart, setBalance, balance } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const onClickEnviar = () => {
@@ -26,63 +27,82 @@ export const CartOpen = () => {
     localStorage.removeItem("cart");
     localStorage.removeItem("name");
     localStorage.removeItem("date");
-    setBalance(0)
+    setBalance(0);
   };
 
   return (
     <Container2>
-      <CardCart />
-      <InfoDiv>
-        <DivInfoWithIcon>
-          <img src={Name} alt="Person's shadow" />
-          <p>{localStorage.getItem("name")}</p>
-        </DivInfoWithIcon>
-        <DivInfoWithIcon>
-          <img src={Truck} alt="Truck" />
-          <p>Entrega em: {localStorage.getItem("date")}</p>
-        </DivInfoWithIcon>
-        <DivInfoWithIcon>
-          <ImgPay src={Pay} alt="Hand making a payment" />
-          <p>Forma de pagamento:</p>
-          <ContainerCheck>
-            <Method>
-              <input
-                type="radio"
-                id="debitCard"
-                name="setPayMethod"
-                value="debitCard" /* 
+      {balance !== 0 ? (
+        <>
+          <CardCart />
+          <InfoDiv>
+            <DivInfoWithIcon>
+              <img src={Name} alt="Person's shadow" />
+              <p>{localStorage.getItem("name")}</p>
+            </DivInfoWithIcon>
+            <DivInfoWithIcon>
+              <img src={Truck} alt="Truck" />
+              <p>Entrega em: {localStorage.getItem("date")}</p>
+            </DivInfoWithIcon>
+            <DivInfoWithIcon>
+              <ImgPay src={Pay} alt="Hand making a payment" />
+              <p>Forma de pagamento:</p>
+              <ContainerCheck>
+                <Method>
+                  <input
+                    type="radio"
+                    id="debitCard"
+                    name="setPayMethod"
+                    value="debitCard" /* 
               onChange={() => {
                 setPayMethod("debitCard");
               }} */
-              />
-              <span>Cartão de débito</span>
-            </Method>
-            <Method>
-              <input
-                type="radio"
-                id="creditcard"
-                name="setPayMethod"
-                value="creditcard"
-              />
-              <span>Cartão de Credito</span>
-            </Method>
-            <Method>
-              <input
-                type="radio"
-                id="boleto"
-                name="setPayMethod"
-                value="boleto"
-              />
-              <span>Boleto</span>
-            </Method>
-            <Method>
-              <input type="radio" id="pix" name="setPayMethod" value="pix" />
-              <span>PIX</span>
-            </Method>
-          </ContainerCheck>
-        </DivInfoWithIcon>
-      </InfoDiv>
-      <Button onClick={() => onClickEnviar()}>Enviar</Button>
+                  />
+                  <span>Cartão de débito</span>
+                </Method>
+                <Method>
+                  <input
+                    type="radio"
+                    id="creditcard"
+                    name="setPayMethod"
+                    value="creditcard"
+                  />
+                  <span>Cartão de Credito</span>
+                </Method>
+                <Method>
+                  <input
+                    type="radio"
+                    id="boleto"
+                    name="setPayMethod"
+                    value="boleto"
+                  />
+                  <span>Boleto</span>
+                </Method>
+                <Method>
+                  <input
+                    type="radio"
+                    id="pix"
+                    name="setPayMethod"
+                    value="pix"
+                  />
+                  <span>PIX</span>
+                </Method>
+              </ContainerCheck>
+            </DivInfoWithIcon>
+          </InfoDiv>
+          <Button onClick={() => onClickEnviar()}>Enviar</Button>
+        </>
+      ) : (
+        <>
+          <br />
+          <br />
+          <Pgreen>Que pena! Seu carrinho esta vazinho.</Pgreen>
+          <br />
+          <Pgreen> Vamos as compras? </Pgreen>
+          <br />
+          <br />
+        </>
+      )}
     </Container2>
   );
 };

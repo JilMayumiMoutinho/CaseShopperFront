@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../../global/GlobalContext";
 import CartImg from "../../assets/cartIcon.png";
 import Logo from "../../assets/logoImg.png";
@@ -66,6 +66,8 @@ export const Header = () => {
         <img src={Logo} alt="Logo Shopper" onClick={() => goHome(navigate)} />
       </LogoDiv>
       <InputsDiv>
+        <UserForm />
+        <br />
         <SearchDiv>
           <SearchInput
             placeholder="O que você procura?"
@@ -84,8 +86,6 @@ export const Header = () => {
             <MenuItem value={"name ASC"}>Nome - Crescente</MenuItem>
           </FilterSelect>
         </SearchDiv>
-        <br />
-        <UserForm />
       </InputsDiv>
       <CartDiv onClick={() => onClickCart(isOpen)}>
         <img src={Bag} alt="Bag of groceries" />

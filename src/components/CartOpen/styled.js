@@ -82,6 +82,7 @@ export const ContainerCheck = styled.div`
   flex-direction: column;
   width: 90%;
 `;
+
 export const Method = styled.label`
 width: 100%;
   display: flex;
@@ -91,4 +92,11 @@ width: 100%;
   span {
     margin-left: 0.2rem;
   }
+`;
+
+export const Pgreen = styled.p`
+  color: ${greenShopper};
+  font-size: large;
+  padding: 1rem;
+  align-self: center;
 `;

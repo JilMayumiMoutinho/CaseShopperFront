@@ -14,6 +14,7 @@ export const GlobalState = (props) => {
   const [upPage, setUpPage] = useState(0);
   const [sort, setSort] = useState("");
   const [order, setOrder] = useState("ASC");
+  const [allProducts, setAllProducts] = useState([]);
 
   if (cart === "") {
     const getLocal = localStorage.getItem("cart");
@@ -23,7 +24,8 @@ export const GlobalState = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 2000);
+    
   }, []);
 
   const values = {
@@ -47,6 +49,8 @@ export const GlobalState = (props) => {
     setSort,
     order,
     setOrder,
+    allProducts,
+    setAllProducts,
   };
 
   return <Provider value={values}>{props.children}</Provider>;
